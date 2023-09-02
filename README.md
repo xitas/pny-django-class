@@ -1,19 +1,19 @@
 # Django16 and here are steps for creating django project
 
- ### 1. First we install django in python
+ ### 1. First, we install Django in python
 
 **Command:**
 
 >pip install django
 
-### 2. We create our django project
+### 2. We created our Django project
 
 **Command:**
 
 >django-admin startproject core .
 
-For name you can add the name of the project `.` tells django-admin to install django app into the same folder
-for this course we name our project core
+For a name you can add the name of the project `.` tells django-admin to install the Django app into the same folder
+For this course, we name our project core
 
 ###  3. Run migrations
 
@@ -21,7 +21,7 @@ for this course we name our project core
 
 >python manage.py migrate
 
-Migration are for install databse default table in sqlite and its file will be created
+Migration is for install data default table in SQLite and its file will be created
 
 ###  4. We can create a super user from which we can access the admin panel
 
@@ -29,7 +29,7 @@ Migration are for install databse default table in sqlite and its file will be c
 
 >python manage.py createsuperuser
 
-### 5. Now we can start our django project:
+### 5. Now we can start our Django project:
 
 **Command:**
 
@@ -37,20 +37,20 @@ Migration are for install databse default table in sqlite and its file will be c
 
 This will start our server. and we can see our app in the browser on `localhost:8000`
 
-### 6. From here we can login to our python admin panel (`localhost:8000/admin`) from check everything.
+### 6. From here we can log in to our Python admin panel (`localhost:8000/admin`) to check everything.
 
-Username and password that we have created at the time of creating supersuer
+The username and password that we created at the time of creating the superuser
 
-### 7. In code we can add our django app
+### 7. In code, we can add our Django app
 
 **Command:**
 
 >python manage.py startapp pages
 
-For this course we have created a app name of pages in which we can store our static pages
+For this course, we have created an app name of pages in which we can store our static pages
 like **home, about and contact**
 
-### 8. After installing the appliaction we have to add our app in django settings in our main project file `(core -> setting)`.
+### 8. After installing the application we have to add our app in Django settings in our main project file `(core -> setting)`.
 
 We add our app name at the bottom of `INSTALLED_APPS` list.
 
@@ -68,9 +68,9 @@ INSTALLED_APPS = [
 ]
 ```
 
-### 9. Now we can create templete for pages
+### 9. Now we can create templates for pages
 
-#### 9.1. For template pages first we have to crate a template folder at the start:
+#### 9.1. For template pages first, we have to create a template folder at the start:
 
 **Project:**
 
@@ -80,7 +80,7 @@ INSTALLED_APPS = [
 -template 
 ```
 
-#### 9.2. After that we have to add template to setting file `(core -> setting)`:
+#### 9.2. After that, we have to add a template to the setting file `(core -> setting)`:
 
 **Code:**
 
@@ -103,8 +103,8 @@ TEMPLATES = [
 ```
 
 
-#### 9.3. In template file the we can add the `base.html`
-the base.html contain all the shared code 
+#### 9.3. In the template file, we can add the `base.html`
+the base.html contains all the shared code 
 
 **Example: **
 ```
@@ -124,7 +124,7 @@ footer
 --pages
 ```
 
-In this pages files we add our `home.html, about.html, contact.html`
+In this pages file we add our `home.html, about.html, contact.html`
 
 **Project:**
 ```
@@ -138,7 +138,7 @@ In this pages files we add our `home.html, about.html, contact.html`
 ---contact.html
 ```
 
-### 10. after that we can go into our views in pages file and add the view of the home, about and contact `(pages -> view)`
+### 10. After that we can go into our views in the pages file and add the view of the home, about, and contact `(pages -> view)`
 
 **Code:**
 ```
@@ -155,7 +155,7 @@ def contact(request):
 ```
 
 
-### 11. Now we can create url of the pages `(core -> urls)`
+### 11. Now we can create URL of the pages `(core -> urls)`
 
 **Code:**
 ```
@@ -172,7 +172,7 @@ urlpatterns = [
 ]
 ```
 
-### 12. now we can see the home, about, contact url can work on `localhost:8000`
+### 12. Now we can see the home, about, and contact URL can work on `localhost:8000`
 
 **Urls:**
 ```
@@ -182,9 +182,9 @@ localhost:8000/about
 localhost:8000/contact
 ```
 
-### 13. Now we have add static file for loading or css, js and image files
+### 13. Now we have to add static files for loading or css, js, and image files
 
-#### 13.1. First we add static folder in or main folder
+#### 13.1. First, we add a static folder in our main folder
 
 **Project:**
 ```
@@ -194,7 +194,7 @@ localhost:8000/contact
 -static
 ```
 
-#### 13.2. We add static folder link in our settings `(core -> setting)`
+#### 13.2. We add a static folder link in our settings `(core -> setting)`
 ```
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
@@ -213,10 +213,10 @@ and likewise image will be:
 `<img src="{% static 'home.jpeg' %}" width="500px" height="350px">`
 
 
-### 14. Now we will add blog for load data from our database
+### 14. Now we will add a blog for loading data from our database
 
 
-### 15. First we create or blog app:
+### 15. First, we create or blog app:
 
 **Command:**
 
@@ -254,14 +254,14 @@ class Blog(models.Model):
         return self.title`
 ```
 
-### 18: Then run makemigrations for check model change
+### 18: Then run makemigrations to check the model change
 
 **Command:**
 
 >python manage.py makemigrations
 
 
-### 19. After making migration add these migration to database
+### 19. After making the migration add these migrations to the database
 
 **Command:**
 
@@ -283,10 +283,10 @@ class BlogAdmin(admin.ModelAdmin):
 admin.site.register(Blog, BlogAdmin)`
 ```
 
-### 21. Now we can read, create, update and delete in django admin (`localhost:8000/admin`)
+### 21. Now we can read, create, update, and delete in Django admin (`localhost:8000/admin`)
 
 
-### 22. After that we will crate our blog template (in template folder)
+### 22. After that, we will create our blog template (in the template folder)
 ```
 -core
 -pages
@@ -311,7 +311,7 @@ def post(request, id):
     return render(request, "pages/post.html")
 ```
 
-### 24. now add url of blog `(core -> urls)`
+### 24. now add URL of blog `(core -> urls)`
 
 **Code:**
 ```
@@ -331,9 +331,9 @@ urlpatterns = [
 ]
 ```
 
-In post we passed id in url and we can get it through a argument in view
+In the post, we passed the `id` in URL and we can get it through an argument in view
 
-### 25. Now we have to fetch data from db and pass it to our template `(blog -> url)`
+### 25. Now we have to fetch data from DB and pass it to our template `(blog -> url)`
 
 **Code:**
 ```
@@ -356,9 +356,9 @@ def post(request, id):
 ```
 
 
-### 26. now we can render the data into our template:
+### 26. Now we can render the data into our template:
 
-**Example: **
+**Example:**
 
 `(template -> post)`
 
@@ -383,9 +383,9 @@ def post(request, id):
       </div>
 {% endblock %}
 ```
-and we can create a loop for getting all blog in template
+and we can create a loop for getting all blogs in the template
 
-**Example: **
+**Example:**
 
 `(template blog)`
 
