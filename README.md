@@ -1,4 +1,4 @@
-# Django16 and here are steps for creating django project
+# Here are steps for creating a Django blog project
 
  ### 1. First, we install Django in python
 
@@ -21,7 +21,7 @@ For this course, we name our project core
 
 >python manage.py migrate
 
-Migration is for install data default table in SQLite and its file will be created
+Migration is for installing the data default table in SQLite and its file will be created
 
 ###  4. We can create a super user from which we can access the admin panel
 
